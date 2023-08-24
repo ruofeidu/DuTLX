@@ -1,0 +1,116 @@
+<html>
+  <head>
+    <title>NASA Task Load Index Part 1</title>
+    <link rel="stylesheet" href="tlx.css" />
+    <script language="JavaScript" type="text/javascript" src="tlx.js"></script>
+  </head>
+  <body onLoad="onLoad();">
+    <div id="div_part1">
+      Task Questionnaire - Part 1
+      <br />
+      Participant ID:
+      <input id="pid" type="number" value="1" />
+
+      Condition:
+      <button id="LLM" class="button active" onclick="toggle('LLM')">
+        LLM
+      </button>
+      <button id="VB" class="button" onclick="toggle('VB')">VB</button>
+
+      <br />
+      Click on each scale at the point that best indicates your experience of
+      the task. <br />
+      <br />
+      <div id="scale0"></div>
+      <div id="scale1"></div>
+      <div id="scale2"></div>
+      <div id="scale3"></div>
+      <div id="scale4"></div>
+      <div id="scale5"></div>
+      <br />
+      <!-- <input
+        class="next"
+        id="next"
+        type="button"
+        value="Continue >>"
+        onClick="buttonPart1();"
+      /> -->
+      <input
+        class="next button"
+        id="submit"
+        type="button"
+        value="Submit"
+        onClick="buttonSubmit();"
+      />
+      <br />
+      <br />
+      <br />
+      <br />
+      <p style="color: grey">
+        (Ruofei Du remixed from
+        <a href="https://www.keithv.com/software/nasatlx/nasatlx.html">
+          Prof. Keith Vertanen's TLX tool</a
+        >)
+      </p>
+    </div>
+    <div id="div_part2" style="display: none">
+      Task Questionnaire - Part 2 <br />
+      <br />
+      One each of the following 15 screens, click on the scale title that
+      represents the more important contributor to workload for the task <br />
+      <br />
+      <!-- <input
+        class="next"
+        id="next"
+        type="button"
+        value="Continue >>"
+        onClick="buttonPart2();"
+      /> -->
+      <input
+        class="next"
+        id="submit"
+        type="button"
+        value="Submit >>"
+        onClick="buttonSubmit();"
+      />
+    </div>
+    <div id="div_part3" style="display: none">
+      Task Questionnaire - Part 2 <br />
+      <br />
+      Click on the factor that represents the more important contributor to
+      workload for the task<br />
+      <br />
+      <table>
+        <tr>
+          <td>
+            <input
+              class="pair"
+              id="pair1"
+              type="button"
+              value
+              onClick="buttonPair1();"
+            />
+          </td>
+          <td class="def"><div id="pair1_def"></div></td>
+        </tr>
+        <tr>
+          <td align="center">or</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            <input
+              class="pair"
+              id="pair2"
+              type="button"
+              value
+              onClick="buttonPair2();"
+            />
+          </td>
+          <td class="def"><div id="pair2_def"></div></td>
+        </tr>
+      </table>
+    </div>
+    <div id="div_part4" style="display: none"></div>
+  </body>
+</html>

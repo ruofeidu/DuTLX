@@ -1,0 +1,71 @@
+td.bottom {
+  width: 0.6cm;
+  height: 0.4cm;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  margin: 0px;
+  padding: 0px 0px 0px 0px;
+}
+
+table.scale {
+  margin: 0px;
+  padding: 0px 0px 0px 0px;
+  border-collapse: collapse;
+}
+
+td.top1 {
+  width: 0.6cm;
+  height: 0.4cm;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  margin: 0px;
+  padding: 0px 0px 0px 0px;
+}
+td.top2 {
+  width: 0.6cm;
+  height: 0.4cm;
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  margin: 0px;
+  padding: 0px 0px 0px 0px;
+}
+
+td.heading {
+  font: Bold 14px Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+td.left {
+  font: 14px Arial, Helvetica, sans-serif;
+}
+
+td.right {
+  font: 14px Arial, Helvetica, sans-serif;
+  text-align: right;
+}
+
+td.def {
+  width: 12cm;
+  padding: 0px 0px 0px 20px;
+  font: 12px Arial, Helvetica, sans-serif;
+}
+
+input.pair {
+  width: 5cm;
+  height: 1cm;
+  font: Bold 14px Arial, Helvetica, sans-serif;
+}
+
+/* Default button styles */
+.button {
+  background-color: white;
+  border: 1px solid black;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* Active button styles */
+.active {
+  background-color: #e5f5f9;
+}
