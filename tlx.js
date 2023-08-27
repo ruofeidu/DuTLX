@@ -15,7 +15,7 @@ scale[1] = 'Physical Demand';
 left[1] = 'Low';
 right[1] = 'High';
 def[1] =
-    'How much physical activity was required (e.g., dragging-and-dropping, clicking, typing, etc)? Was the task easy or demanding, slow or brisk, slack or strenuous, restful or laborious?';
+    'How much physical activity was required (e.g., dragging-and-dropping, clicking, typing, pushing, pulling, turning, controlling, activating, etc)? Was the task easy or demanding, slow or brisk, slack or strenuous, restful or laborious?';
 
 scale[2] = 'Temporal Demand';
 left[2] = 'Low';
@@ -274,7 +274,42 @@ function nextPair() {
   }
 }
 
-let activeCondition = 'LLM';  // Initial active button
+// Get the current URL
+const url = new URL(window.location.href);
+
+// Initialize URLSearchParams object
+const urlParams = new URLSearchParams(url.search);
+
+// Get individual parameters
+let conditionA = 'A';
+let conditionB = 'B';
+let conditionC = 'C';
+let conditionD = 'D';
+
+if (urlParams.has('A')) {
+  conditionA = urlParams.get('A');
+}
+if (urlParams.has('B')) {
+  conditionB = urlParams.get('B');
+}
+if (urlParams.has('C')) {
+  conditionC = urlParams.get('C');
+}
+if (urlParams.has('D')) {
+  conditionD = urlParams.get('D');
+}
+if (urlParams.has('P')) {
+  document.getElementById('pid').value = urlParams.get('P');
+}
+
+
+let conditionClassName = 'condition';  // Initial active button
+let activeCondition = conditionA;      // Initial active button
+
+document.getElementById('A').innerHTML = conditionA;
+document.getElementById('B').innerHTML = conditionB;
+document.getElementById('C').innerHTML = conditionC;
+document.getElementById('D').innerHTML = conditionD;
 
 /**
  * prompt:
@@ -285,9 +320,10 @@ let activeCondition = 'LLM';  // Initial active button
  */
 // Function to toggle active state
 function toggle(buttonId) {
-  document.getElementById(activeCondition).classList.remove('active');
+  document.getElementsByClassName(conditionClassName)
+      .classList.remove('active');
   document.getElementById(buttonId).classList.add('active');
-  activeCondition = buttonId;
+  activeCondition = document.getElementById(buttonId).innerHTML;
 }
 
 // Function to query active button

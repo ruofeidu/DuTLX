@@ -2,7 +2,6 @@
   <head>
     <title>NASA Task Load Index Part 1</title>
     <link rel="stylesheet" href="tlx.css" />
-    <script language="JavaScript" type="text/javascript" src="tlx.js"></script>
   </head>
   <body onLoad="onLoad();">
     <div id="div_part1">
@@ -12,10 +11,12 @@
       <input id="pid" type="number" value="1" />
 
       Condition:
-      <button id="LLM" class="button active" onclick="toggle('LLM')">
-        LLM
+      <button id="A" class="conditions button active" onclick="toggle('A')">
+        A
       </button>
-      <button id="VB" class="button" onclick="toggle('VB')">VB</button>
+      <button id="B" class="conditions button" onclick="toggle('B')">B</button>
+      <button id="C" class="conditions button" onclick="toggle('C')">C</button>
+      <button id="D" class="conditions button" onclick="toggle('D')">D</button>
 
       <br />
       Click on each scale at the point that best indicates your experience of
@@ -50,7 +51,11 @@
         (Ruofei Du remixed from
         <a href="https://www.keithv.com/software/nasatlx/nasatlx.html">
           Prof. Keith Vertanen's TLX tool</a
-        >)
+        >)<br />
+        Usage:
+        <a href="http://tool.duruofei.com/?P=4&A=Baseline&B=New"
+          >https://tool.duruofei.com/tlx/?P=4&A=Baseline&B=New</a
+        >
       </p>
     </div>
     <div id="div_part2" style="display: none">
@@ -112,5 +117,6 @@
       </table>
     </div>
     <div id="div_part4" style="display: none"></div>
+    <script language="JavaScript" type="text/javascript" src="tlx.js"></script>
   </body>
 </html>
