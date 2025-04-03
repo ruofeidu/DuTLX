@@ -304,26 +304,25 @@ if (urlParams.has('P')) {
 
 
 let conditionClassName = 'condition';  // Initial active button
-let activeCondition = conditionA;      // Initial active button
+let activeCondition = document.querySelector('.conditions.button.active').innerHTML;
 
 document.getElementById('A').innerHTML = conditionA;
 document.getElementById('B').innerHTML = conditionB;
 document.getElementById('C').innerHTML = conditionC;
 document.getElementById('D').innerHTML = conditionD;
 
-/**
- * prompt:
- * write html, two buttons, condition AAA and condition BBB, by default AAA is
- * highlighted with grey background, when clicking BBB, AAA will be white
- * background and BBB will become actived with grey background, also one can use
- * javascript to query which condition is selected.
- */
 // Function to toggle active state
 function toggle(buttonId) {
-  document.getElementsByClassName(conditionClassName)
-      .classList.remove('active');
-  document.getElementById(buttonId).classList.add('active');
-  activeCondition = document.getElementById(buttonId).innerHTML;
+  document.querySelectorAll('.conditions.button').forEach(button => {
+    button.classList.remove('active'); // Remove 'active' class from all buttons
+  });
+
+  // Add 'active' class to the clicked button
+  const clickedButton = document.getElementById(buttonId);
+  clickedButton.classList.add('active');
+
+  // Update the active condition
+  activeCondition = clickedButton.innerHTML;
 }
 
 // Function to query active button
